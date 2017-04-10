@@ -6,7 +6,7 @@ var columna=parseInt(prompt("ingrese la cantidad de columnas"));
 var tamanoSnake=1;
 var moverA="0,1";
 var ubicacion = new Array(tamanoSnake);
-var manzana = "2-2"
+var manzana = "";
 ubicacion[tamanoSnake-1]="1-1";
 var tiempoEspera = 700;
 
@@ -43,6 +43,7 @@ function crearTablaDinamica(){
   lienzo.appendChild(tabla);
   console.log(tabla);
   ubicarSnike();
+  dibujarManzana();
 
   //dibujaPrimeraSnake();
   window.addEventListener("keydown",moverVibora);
@@ -51,11 +52,29 @@ function crearTablaDinamica(){
 
 //en esta funcion ubicamos la víbora en su primer posicion
 function ubicarSnike(){
-
   validaBordes();
+  validaManzana();
   var iniciasnake=document.getElementById(ubicacion[tamanoSnake-1]);
   iniciasnake.style.background="brown";
+
   //iniciasnake.innerText=1;
+}
+
+
+function dibujarManzana(){
+  //dibuja la manzana aleatoriamente dentro de la tabla
+  manzana = (parseInt(Math.ramdom()*columna)+1)+"-"+(parseInt(Math.ramdom()*fila)+1); //se crea aleatoriamente la cordenada de la manzana
+  var iniciaManzana = document.getElementById("manzana") //es la cordenada en donde se ubicara la manzana
+  iniciaManzana.style.background="red";
+}
+
+function validaManzana(){
+  /*con esta funcion se pretende hacer crece la vibora,
+  por el momento solo nos despleca un alert, que nos dice que la cabeza de la
+  vibora esta encima de la manzana*/
+  if(ubicacion[tamanoSnake-1]===manzana){
+    alert("se comio la manzana");
+  }
 }
 
 function desplazaVibora(cordenada){
