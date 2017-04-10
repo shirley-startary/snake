@@ -74,6 +74,7 @@ function validaManzana(){
   vibora esta encima de la manzana*/
   if(ubicacion[tamanoSnake-1]===manzana){
     alert("se comio la manzana");
+    dibujarManzana();
   }
 }
 
