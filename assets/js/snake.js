@@ -63,9 +63,9 @@ function ubicarSnike(){
 
 function dibujarManzana(){
   //dibuja la manzana aleatoriamente dentro de la tabla
-  manzana = (parseInt(Math.ramdom()*columna)+1)+"-"+(parseInt(Math.ramdom()*fila)+1); //se crea aleatoriamente la cordenada de la manzana
-  var iniciaManzana = document.getElementById("manzana") //es la cordenada en donde se ubicara la manzana
-  iniciaManzana.style.background="red";
+  manzana = (parseInt(Math.random()*columna)+1)+"-"+(parseInt(Math.random()*fila)+1); //se crea aleatoriamente la cordenada de la manzana
+  var iniciaManzana = document.getElementById(manzana); //es la cordenada en donde se ubicara la manzana
+  iniciaManzana.style.background = "red";
 }
 
 function validaManzana(){
